@@ -1,0 +1,15 @@
+{
+  "name": "SimpleApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "buffer": "^4.5.0",
+    "bugger": "^2.2.3",
+    "react-native": "^0.21.0",
+    "react-native-checkbox": "^1.0.8",
+    "react-native-checkbox-field": "^1.0.6"
+  }
+}
