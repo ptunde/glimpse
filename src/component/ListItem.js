@@ -29,16 +29,15 @@ var ListItem = React.createClass({
 var styles = StyleSheet.create({
   row: {
    height: 40,
-   marginLeft: 8,
    justifyContent: 'center',
    padding: 10,
-   backgroundColor: '#F6F6F6',
-   marginBottom: 2,
+   backgroundColor: 'white',
+   borderBottomWidth: 2,
+   borderBottomColor: "#F6F6F6",
    alignSelf: "stretch"
  },
   info: {
     fontSize: 16,
-    alignSelf: 'center',
     color: "grey"
   },
 });

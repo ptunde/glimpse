@@ -19,8 +19,8 @@ class PageOne extends Component {
     super(props);
 
     this.state = {animating: false,
-                  isPatient: false};
-    isPatient = false;
+                  isDoctor: false};
+    isDoctor = false;
     this._selectCheckbox = this._selectCheckbox.bind(this);
   }
 
@@ -40,33 +40,33 @@ class PageOne extends Component {
     //     console.log("test " + this._selectCheckbox.selected);
     //
     //     if (results.success == true) {
-    //       if (isPatient) {
-    //         this.props.navigator.push({
-    //           id: 'second_patient'
-    //         });
-    //       }
-    //       else {
+    //       if (isDoctor) {
     //         this.props.navigator.push({
     //           id: 'second_doctor'
     //         });
     //       }
+    //       else {
+    //         this.props.navigator.push({
+    //           id: 'second_patient'
+    //         });
+    //       }
     //     }
     // });
-    if (isPatient) {
+    if (isDoctor) {
       this.props.navigator.push({
-        id: 'second_patient'
+        id: 'second_doctor'
       });
     }
     else {
       this.props.navigator.push({
-        id: 'second_doctor'
+        id: 'second_patient'
       });
     }
   }
 
 
   _selectCheckbox() {
-      isPatient = !this.state.selected;
+      isDoctor = !this.state.selected;
       this.setState({
           selected: !this.state.selected
       });
@@ -107,7 +107,7 @@ class PageOne extends Component {
         {errorCtrl}
         <View style={styles.containerStyle}>
           <CheckboxField
-              value={this.state.isPatient}
+              value={this.state.isDoctor}
               label={this.state.fieldLabel}
               onSelect={this._selectCheckbox}
               selected={this.state.selected}
@@ -116,7 +116,7 @@ class PageOne extends Component {
           </CheckboxField>
           <Text
             style={styles.buttonText}>
-            Sign in as a patient
+            Sign in as a doctor
           </Text>
         </View>
         <TouchableOpacity

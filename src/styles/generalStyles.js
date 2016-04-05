@@ -12,6 +12,28 @@ var styles = StyleSheet.create({
     color: "#FF0000",
     alignItems:"center"
   },
+  listView: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    flexDirection: 'column',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E0E0E0',
+  },
+  listHeaderWrapper: {
+    height: 50,
+    backgroundColor: '#D9D9D9',
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    alignItems: 'center'
+  },
+  listHeader: {
+    color: '#fff',
+    fontSize: 25,
+    fontWeight: '700',
+    lineHeight: 0,
+    marginBottom: -7,
+    backgroundColor: 'transparent'
+  },
 });
 
 module.exports = styles;

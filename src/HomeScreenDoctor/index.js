@@ -9,19 +9,15 @@ import React, {
   Image,
   ListView,
 } from "react-native";
-import ListItem from "./ListItem";
+import ListItem from "./../component/ListItem";
 import ControlPanel from "./../component/ControlPanel"
 import Drawer from "react-native-drawer"
+import generalStyles from "./../styles/generalStyles";
 
 var HomeDoctor = React.createClass ({
   _goBack() {
     this.props.navigator.pop();
   },
-
-  _callDoctor() {
-
-  },
-
   componentDidMount() {
     BackAndroid.addEventListener('hardwareBackPress', () => {
       this._goBack();
@@ -31,7 +27,8 @@ var HomeDoctor = React.createClass ({
   getInitialState: function() {
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     return {
-      dataSource: ds.cloneWithRows(['William Adama', 'Barry Allen']),
+      dataSource: ds.cloneWithRows(['William Adama', 'Barry Allen', 'Wedge Antilles', 'Padme Amidala', 'Alyssa Aschorft',
+                                    'Petry Baelish', 'Robert Baratheon']),
     };
   },
   _renderRow(rowData) {
@@ -60,12 +57,15 @@ var HomeDoctor = React.createClass ({
           <Image style={styles.logo}
             source={require('image!glimpse_telehealth_doctor_logo')}
           />
-          <Text style={styles.welcome}>
-            Last Calls
-          </Text>
+          <View style={generalStyles.listHeaderWrapper}>
+            <Text style={generalStyles.listHeader}>
+              LAST CALLS
+            </Text>
+          </View>
           <ListView
             dataSource={this.state.dataSource}
             renderRow={this._renderRow}
+            contentContainerStyle={generalStyles.listView}
           />
         </View>
        </Drawer>
@@ -78,7 +78,7 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
-    alignItems: "center",
+    alignItems: "stretch",
   },
   welcome: {
     fontSize: 20,
@@ -108,16 +108,8 @@ var styles = StyleSheet.create({
   logo: {
     alignSelf: "flex-end",
     width: 100,
-    height: 50,
-    marginTop: 10,
+    height: 40,
     resizeMode: "contain",
-  },
-  image: {
-    width: 50,
-    height: 50,
-    marginTop: 20,
-    resizeMode: "contain",
-    alignSelf: "flex-end",
   },
 });
 

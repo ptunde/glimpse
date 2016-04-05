@@ -39,7 +39,13 @@ export default class ControlPanel extends Component {
   _goTo(onPressAction) {
     console.log("press " + onPressAction);
 
-    this.props.navigator.push({id: onPressAction});
+    if (onPressAction === "first") {
+      this.props.navigator.pop();
+    }
+    else {
+      //this.props.navigator.push({id: onPressAction});
+    }
+
     this.props.closeDrawer();
   }
 
@@ -67,25 +73,30 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'stretch',
     justifyContent: 'flex-start',
-    backgroundColor: '#D9D9D9'
+    backgroundColor: '#2D2D2D'
   },
   header: {
     height: 70,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
+    borderBottomWidth: 1,
+    borderColor: '#A9A9A9',
     paddingTop: 10
   },
   menuItem: {
-    marginBottom: 10,
-    height: 60,
-    backgroundColor: '#999999',
+    height: 50,
+    backgroundColor: '#2D2D2D',
+    borderBottomWidth: 1,
+    alignSelf: "stretch",
     justifyContent: "center",
+    borderColor: '#A9A9A9',
   },
   text: {
-    color: 'black',
-    fontSize: 20,
-    alignSelf: "flex-start",
+    fontSize: 14,
+    color: '#FFFFFF',
+    fontWeight: '500',
+    lineHeight: 25,
     marginLeft: 10,
   },
 });
