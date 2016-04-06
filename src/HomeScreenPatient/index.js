@@ -62,7 +62,7 @@ var HomePatient = React.createClass ({
           />
           <View style={generalStyles.listHeaderWrapper}>
             <Text style={generalStyles.listHeader}>
-              LAST CALLS
+              SELECT A DOCTOR
             </Text>
           </View>
           <ListView

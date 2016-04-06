@@ -13,7 +13,11 @@ import PageOne from "./SignInScreen"
 import HomeDoctor from "./HomeScreenDoctor"
 import HomePatient from "./HomeScreenPatient"
 import OtherScreen from "./OtherPage"
-
+import OutgoingCall from "./component/OutgoingCall";
+import IncomingCall from "./component/IncomingCall";
+import DeclinedCall from "./component/DeclinedCall";
+import AnsweredCall from "./component/AnsweredCall";
+import ScheduleCall from "./component/ScheduleCall";
 
 let sceneConfig = Navigator.SceneConfigs.FloatFromRight;
 sceneConfig.gestures = {};
@@ -37,6 +41,7 @@ var App = React.createClass({
     _navigator = navigator;
     switch (route.id) {
       case 'first':
+      //return (<DeclinedCall navigator={navigator} title="Sign In"/>);
         return (<PageOne navigator={navigator} title="Sign In"/>);
       case 'second_doctor':
         return (<HomeDoctor navigator={navigator} title="HomeDoctor"/>);
